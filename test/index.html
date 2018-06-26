@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>indexlist test</title>
+    <!--hotcss-->
+    <script>
+    (function(window,document){var hotcss={};var dprRatio=7.5;(function(){var viewportEl=document.querySelector('meta[name="viewport"]'),hotcssEl=document.querySelector('meta[name="hotcss"]'),dpr=window.devicePixelRatio||1,maxWidth=540,designWidth=750;dpr=dpr>=3?3:(dpr>=2?2:1);if(hotcssEl){var hotcssCon=hotcssEl.getAttribute("content");if(hotcssCon){var initialDprMatch=hotcssCon.match(/initial\-dpr=([\d\.]+)/);if(initialDprMatch){dpr=parseFloat(initialDprMatch[1])}var maxWidthMatch=hotcssCon.match(/max\-width=([\d\.]+)/);if(maxWidthMatch){maxWidth=parseFloat(maxWidthMatch[1])}var designWidthMatch=hotcssCon.match(/design\-width=([\d\.]+)/);if(designWidthMatch){designWidth=parseFloat(designWidthMatch[1])}}}document.documentElement.setAttribute("data-dpr",dpr);hotcss.dpr=dpr;document.documentElement.setAttribute("max-width",maxWidth);hotcss.maxWidth=maxWidth;if(designWidth){document.documentElement.setAttribute("design-width",designWidth)}hotcss.designWidth=designWidth;var scale=1/dpr,content="width=device-width, initial-scale="+scale+", minimum-scale="+scale+", maximum-scale="+scale+", user-scalable=no";if(viewportEl){viewportEl.setAttribute("content",content)}else{viewportEl=document.createElement("meta");viewportEl.setAttribute("name","viewport");viewportEl.setAttribute("content",content);document.head.appendChild(viewportEl)}})();hotcss.px2rem=function(px,designWidth){if(!designWidth){designWidth=parseInt(hotcss.designWidth,10)}return parseInt(px,10)/(designWidth/dprRatio)};hotcss.rem2px=function(rem,designWidth){if(!designWidth){designWidth=parseInt(hotcss.designWidth,10)}return rem*(designWidth/dprRatio)};hotcss.mresize=function(){var innerWidth=document.documentElement.getBoundingClientRect().width||window.innerWidth;if(hotcss.maxWidth&&(innerWidth/hotcss.dpr>hotcss.maxWidth)){innerWidth=hotcss.maxWidth*hotcss.dpr}if(!innerWidth){return false}document.documentElement.style.fontSize=(innerWidth/dprRatio)+"px";hotcss.callback&&hotcss.callback()};hotcss.mresize();window.addEventListener("resize",function(){clearTimeout(hotcss.tid);hotcss.tid=setTimeout(hotcss.mresize,33)},false);window.addEventListener("load",hotcss.mresize,false);setTimeout(function(){hotcss.mresize()},333);window.hotcss=hotcss})(window,document);
+    </script>
+    <style>
+        html,body,.test{
+            height:100%;
+            font-size:24px;
+        }
+        /*确保是indexc容器在滚动*/
+        .indexc{
+            overflow-y:auto;
+            height:100%;
+        }
+        body,ul,li,h4{
+            margin:0;
+            padding:0;
+        }
+        ul{list-style: none;}
+        .indexs h4{
+            background-color:#ccc;
+            font-size: 28px;
+        }
+        .indexs .index-item{
+            background-color:#dedede;
+        }
+        .index-navs{
+            width:80px;
+            text-align:right;
+            font-size:24px;
+            position: fixed;
+            top:50px;
+            right:5px;
+        }
+        .nav-item{
+            padding-right:15px;
+        }
+        .index-indicator{
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            -webkit-transform:translate(-50%,-50%);
+            background:rgba(0,0,0,.6);
+            font-size:36px;
+            color:#fff;
+            text-align:center;
+            width:80px;
+            height:80px;
+            border-radius:4px;
+            -webkit-border-radius:4px;
+            line-height: 80px;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        <div class="indexc">
+            <ul class="indexs">
+                <h4 data-nav="A">A</h4>
+                <li class="index-item">Any</li>
+                <li class="index-item">Adny</li>
+                <li class="index-item">Andine</li>
+                <li class="index-item">Any</li>
+                <li class="index-item">Adny</li>
+                <li class="index-item">Andine</li>
+                <li class="index-item">Any</li>
+                <li class="index-item">Adny</li>
+                <li class="index-item">Andine</li>
+                <li class="index-item">Any</li>
+                <li class="index-item">Adny</li>
+                <li class="index-item">Andine</li>
+                <h4 data-nav="B">B</h4>
+                <li class="index-item">Boy</li>
+                <li class="index-item">Body</li>
+                <li class="index-item">Bob</li>
+                <li class="index-item">Bobi</li>
+                <li class="index-item">Boy</li>
+                <li class="index-item">Body</li>
+                <li class="index-item">Bob</li>
+                <li class="index-item">Bobi</li>
+                <h4 data-nav="C">C</h4>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <li class="index-item">Cluo</li>
+                <h4 data-nav="D">D</h4>
+                <li class="index-item">Doy</li>
+                <li class="index-item">Dondy</li>
+                <li class="index-item">Doud</li>
+                <li class="index-item">Dog</li>
+                <li class="index-item">Div</li>
+                <li class="index-item">Doy</li>
+                <li class="index-item">Dondy</li>
+                <li class="index-item">Doud</li>
+                <li class="index-item">Dog</li>
+                <li class="index-item">Div</li>
+                <li class="index-item">Doy</li>
+                <li class="index-item">Dondy</li>
+                <li class="index-item">Doud</li>
+                <li class="index-item">Dog</li>
+                <li class="index-item">Div</li>
+                <h4 data-nav="E">E</h4>
+                <li class="index-item">Et</li>
+                <li class="index-item">Eli</li>
+                <li class="index-item">Eob</li>
+                <li class="index-item">Et</li>
+                <li class="index-item">Eli</li>
+                <li class="index-item">Eob</li>
+                <li class="index-item">Et</li>
+                <li class="index-item">Eli</li>
+                <li class="index-item">Eob</li>
+                <h4 data-nav="F">F</h4>
+                <li class="index-item">Foy</li>
+                <li class="index-item">Fondy</li>
+                <li class="index-item">Foud</li>
+                <li class="index-item">Fog</li>
+                <li class="index-item">Fiv</li>
+                <li class="index-item">Foy</li>
+                <li class="index-item">Fondy</li>
+                <li class="index-item">Foud</li>
+                <li class="index-item">Fog</li>
+                <li class="index-item">Fiv</li>
+                <li class="index-item">Foy</li>
+                <li class="index-item">Fondy</li>
+                <li class="index-item">Foud</li>
+                <li class="index-item">Fog</li>
+                <li class="index-item">Fiv</li>
+                <h4 data-nav="G">G</h4>
+                <li class="index-item">Goy</li>
+                <li class="index-item">Gondy</li>
+                <li class="index-item">Goud</li>
+                <li class="index-item">Gog</li>
+                <li class="index-item">Giv</li>
+                <li class="index-item">Goy</li>
+                <li class="index-item">Gondy</li>
+                <li class="index-item">Goud</li>
+                <li class="index-item">Gog</li>
+                <li class="index-item">Giv</li>
+                <li class="index-item">Goy</li>
+                <li class="index-item">Gondy</li>
+                <li class="index-item">Goud</li>
+                <li class="index-item">Gog</li>
+                <li class="index-item">Giv</li>
+                <li class="index-item">Goy</li>
+                <li class="index-item">Gondy</li>
+                <li class="index-item">Goud</li>
+                <li class="index-item">Gog</li>
+                <li class="index-item">Giv</li>
+                <li class="index-item">Goy</li>
+                <li class="index-item">Gondy</li>
+                <li class="index-item">Goud</li>
+                <li class="index-item">Gog</li>
+                <li class="index-item">Giv</li>
+                <li class="index-item">Goy</li>
+                <li class="index-item">Gondy</li>
+                <li class="index-item">Goud</li>
+                <li class="index-item">Gog</li>
+                <li class="index-item">Giv</li>
+                <h4 data-nav="H">H</h4>
+                <li class="index-item">Hoy</li>
+                <li class="index-item">Hondy</li>
+                <li class="index-item">Houd</li>
+                <li class="index-item">Hog</li>
+                <li class="index-item">Hiv</li>
+                <li class="index-item">Hoy</li>
+                <li class="index-item">Hondy</li>
+                <li class="index-item">Houd</li>
+                <li class="index-item">Hog</li>
+                <li class="index-item">Hiv</li>
+                <li class="index-item">Hoy</li>
+                <li class="index-item">Hondy</li>
+                <li class="index-item">Houd</li>
+                <li class="index-item">Hog</li>
+                <li class="index-item">Hiv</li>
+                <li class="index-item">Hoy</li>
+                <li class="index-item">Hondy</li>
+                <li class="index-item">Houd</li>
+                <li class="index-item">Hog</li>
+                <li class="index-item">Hiv</li>
+                <li class="index-item">Hoy</li>
+                <li class="index-item">Hondy</li>
+                <li class="index-item">Houd</li>
+                <li class="index-item">Hog</li>
+                <li class="index-item">Hiv</li>
+                <li class="index-item">Hoy</li>
+                <li class="index-item">Hondy</li>
+                <li class="index-item">Houd</li>
+                <li class="index-item">Hog</li>
+                <li class="index-item">Hiv</li>
+            </ul>
+            <ul class="index-navs">
+                <li data-nav="A" class="nav-item">A</li>
+                <li data-nav="B" class="nav-item">B</li>
+                <li data-nav="C" class="nav-item">C</li>
+                <li data-nav="D" class="nav-item">D</li>
+                <li data-nav="E" class="nav-item">E</li>
+                <li data-nav="F" class="nav-item">F</li>
+                <li data-nav="G" class="nav-item">G</li>
+                <li data-nav="H" class="nav-item">H</li>
+            </ul>
+            <span class="index-indicator"></span>
+        </div>
+    </div>
+    <script src="../dist/indexlist.js"></script>
+    <script>
+        new IndexList({
+            threshold: 100
+        });
+    </script>
+</body>
+</html>
